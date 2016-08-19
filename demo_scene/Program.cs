@@ -20,22 +20,26 @@ namespace demo_scene
 				{
 					x = rand.Next(79) + 1;
 					y = rand.Next(23) + 1;
-
-					if ((rand.Next(2) + 1)%2 == 0)
+					var random = rand.Next(3) + 1;
+					if (random % 3 == 0)
 					{
 						Console.ForegroundColor = ConsoleColor.DarkGreen;
-						//Console.Clear();
 					}
-					else
+					else if (random % 3 == 1)
 					{
 						Console.ForegroundColor = ConsoleColor.Green;
-						//Console.Clear();
+					}
+					else if (random % 3 == 2)
+					{
+						Console.ForegroundColor = ConsoleColor.DarkYellow;
 					}
 					Console.SetCursorPosition(x, y);
 
-					if ((rand.Next(2) + 1)%2 == 0)
+					var key = rand.Next(32, 90);
+
+					if ((rand.Next(2) + 1) % 2 == 0)
 					{
-						Console.Write("1");
+						Console.Write((char)key);
 					}
 					else
 					{
